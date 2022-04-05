@@ -20,7 +20,7 @@ class ScreenApp extends StatelessWidget {
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.black,
           currentIndex: 0,
-          items: [
+          items: const [
             BottomNavigationBarItem(
               icon:
               Icon(
@@ -88,7 +88,7 @@ class ScreenApp extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Column(
-                    children: [
+                    children: const [
                       Icon(
                           Icons.location_on_outlined,
                           color: Colors.blue,
@@ -102,7 +102,7 @@ class ScreenApp extends StatelessWidget {
                     ],
                   ),
                   Column(
-                    children: [
+                    children: const [
                       Icon(
                         Icons.verified_outlined,
                         color: Colors.blue,
@@ -116,7 +116,7 @@ class ScreenApp extends StatelessWidget {
                     ],
                   ),
                   Column(
-                    children: [
+                    children: const [
                       Icon(
                         Icons.share_outlined,
                         color: Colors.blue,
@@ -132,13 +132,13 @@ class ScreenApp extends StatelessWidget {
                   Column(
                     children: [
                       Row(
-                        children: [
+                        children: const [
                           Icon(Icons.star,color: Colors.yellow),
                           Icon(Icons.star,color: Colors.yellow),
                           Icon(Icons.star,color: Colors.yellow),
                         ],
                       ),
-                      Text("Avaliar",style: TextStyle(
+                      const Text("Avaliar",style: TextStyle(
                         color: Colors.white,
                         fontSize: 15
                       )
