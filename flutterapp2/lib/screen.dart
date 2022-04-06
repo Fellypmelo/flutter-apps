@@ -11,11 +11,14 @@ class MainScreen extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
-          backgroundColor: Colors.blue,
-          title: const Text("Game")
+            backgroundColor: Colors.black,
+            actions: [IconButton(onPressed: () { }, icon: const Icon(Icons.settings))],
+            leading: IconButton(onPressed: () { },icon: const Icon(Icons.arrow_back),),
+            centerTitle: true,
+            title: const Text("Game")
         ),
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.black,
           items: const [
             BottomNavigationBarItem(
                 icon:
@@ -25,6 +28,10 @@ class MainScreen extends StatelessWidget {
             BottomNavigationBarItem(
                 icon: Icon(Icons.person,color: Colors.white,),
                 label: "Profile"
+            ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.add_shopping_cart,color: Colors.white,),
+                label: "Buy"
             )
           ],
           selectedItemColor: Colors.white,
@@ -35,31 +42,83 @@ class MainScreen extends StatelessWidget {
             Stack(
              children: [
                Center(
-                 child: Image.asset("images/image1.jpg"),
+                 child: Image.asset("images/image2.jpg"),
                ),
                Positioned(
                  bottom: 10,
-                 left: 100,
+                 left: 1,
                  child: Column(
                    children: const [
                      Text ("God of war",style: TextStyle(
                        color: Colors.white,
-                       fontSize: 35,
+                       fontSize: 28,
                        fontWeight: FontWeight.bold,
-                       fontStyle: FontStyle.italic
+                       fontStyle: FontStyle.italic,
                      ),
-                     )
+                     ),
                    ],
                  ),
-               )
+               ),
+               Positioned(
+                 bottom:16,
+                 left: 140,
+                 child: Column(
+                   children: const [
+                     Text (": Jogo eletrônico de 2018",style: TextStyle(
+                       color: Colors.white,
+                       fontSize: 18,
+                       fontWeight: FontWeight.bold,
+                       fontStyle: FontStyle.italic,
+                     ),
+                     ),
+                   ],
+                 ),
+               ),
              ],
+            ),
+            Container(
+
+              color: Colors.black,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column(
+                    children: const [
+                      Icon(
+                        Icons.verified,
+                        color: Colors.white,
+                        size: 24,
+                      ),
+                      Text("Instalado",style: TextStyle(color: Colors.white),)
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Image.asset("images/16.jpg",scale: 32,),
+                      const Text("\nAction/Adventure\n",style: TextStyle(color: Colors.white,fontSize: 13),),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Row(
+                        children: const [
+                          Icon(Icons.star,color: Colors.yellow,),
+                          Icon(Icons.star,color: Colors.yellow,),
+                          Icon(Icons.star,color: Colors.yellow,),
+                        ],
+                      ),
+                      const Text("Avaliação 4.9",style: TextStyle(color: Colors.white,fontSize: 15),)
+                    ],
+                  ),
+                ],
+              ),
             ),
             Row(
               children: [
 
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.fromLTRB(5, 30, 30, 30),
+                    padding: const EdgeInsets.fromLTRB(8, 15, 5, 30),
                     child: Container(
                       color: Colors.blue,
                       child: Expanded(
@@ -69,20 +128,47 @@ class MainScreen extends StatelessWidget {
                           child: const Text(
                             "Start Game",style: TextStyle(
                               color: Colors.white,
-                              fontSize: 15,
+                              fontSize: 16,
                           ),
                           )
                       )
                       ),
                     ),
                   ),
+                ),
+                Column(
+                  children: [
+                    TextButton(onPressed: () { }, child: const Icon(Icons.share,color: Colors.white)),
+                    const Text("Share\n",style: TextStyle(color: Colors.white),)
+
+                  ],
                 )
               ],
             ),
+            Center(
+              child: Image.asset("images/req.jpg",),
+            ),
+            Container(
+              child: Row(
+                children:  [
+                  Text(longString,style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 10.8,
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.bold
+                  ),)
+                ],
+              ),
+            )
           ],
         ),
 
       ),
     );
   }
+  final longString = '''
+  God of War é um jogo eletrônico de ação-aventura 
+  desenvolvido pela Santa Monica Studio
+  e publicado pela Sony Interactive Entertainment. Foi lançado em 20 de abril de 
+  2018 para PlayStation  4 e em 14 de janeiro de 2022 para Microsoft Windows ''';
 }
