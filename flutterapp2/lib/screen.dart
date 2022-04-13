@@ -77,7 +77,6 @@ class MainScreen extends StatelessWidget {
              ],
             ),
             Container(
-
               color: Colors.black,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -115,7 +114,6 @@ class MainScreen extends StatelessWidget {
             ),
             Row(
               children: [
-
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(8, 15, 5, 30),
@@ -140,29 +138,26 @@ class MainScreen extends StatelessWidget {
                   children: [
                     TextButton(onPressed: () { }, child: const Icon(Icons.share,color: Colors.white)),
                     const Text("Share\n",style: TextStyle(color: Colors.white),)
-
                   ],
                 )
               ],
             ),
             Center(
-              child: Image.asset("images/req.jpg",),
+              child: Image.asset("images/req3.jpg",filterQuality: FilterQuality.high,),
             ),
-            Container(
-              child: Row(
-                children:  [
-                  Text(longString,style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 10.8,
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.bold
-                  ),)
-                ],
-              ),
+            Row(
+              children:  [
+                Text(longString,style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 10.8,
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.bold
+                ),
+                )
+              ],
             )
           ],
         ),
-
       ),
     );
   }
